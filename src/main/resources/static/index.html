@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temperatura & Umidade - Renato Campoy - 4332780</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Temperatura & Umidade</h1>
+
+  <div class="filter">
+    <input type="datetime-local" id="inicio">
+    <input type="datetime-local" id="fim">
+    <button onclick="buscarDados()">Buscar</button>
+  </div>
+
+  <div class="cards">
+    <div class="card" id="card-temp"><strong>Temperatura:</strong> -- °C</div>
+    <div class="card" id="card-umid"><strong>Umidade:</strong> -- %</div>
+  </div>
+
+  <div class="charts">
+    <canvas id="graficoTemp"></canvas>
+    <canvas id="graficoUmid"></canvas>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
