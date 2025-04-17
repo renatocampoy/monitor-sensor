@@ -10,16 +10,22 @@
 <body>
 <div class="container">
   <h1>Temperatura & Umidade</h1>
+  <h2>Atividade extensionista 3 - Renato Campoy</h2>
 
   <div class="filter">
-    <input type="datetime-local" id="inicio">
-    <input type="datetime-local" id="fim">
+    <label for="inicio"></label><input type="datetime-local" id="inicio">
+    <label for="fim"></label><input type="datetime-local" id="fim">
     <button onclick="buscarDados()">Buscar</button>
+    <button class="refresh-btn" onclick="buscarDados(true)">🔄 Atualizar agora</button>
   </div>
 
   <div class="cards">
     <div class="card" id="card-temp"><strong>Temperatura:</strong> -- °C</div>
     <div class="card" id="card-umid"><strong>Umidade:</strong> -- %</div>
+  </div>
+
+  <div class="update-info">
+    Última atualização: <span id="ultima-atualizacao">--</span>
   </div>
 
   <div class="charts">
@@ -28,6 +34,9 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>

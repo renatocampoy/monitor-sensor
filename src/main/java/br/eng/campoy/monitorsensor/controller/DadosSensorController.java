@@ -5,6 +5,7 @@ import br.eng.campoy.monitorsensor.entity.DadosSensor;
 import br.eng.campoy.monitorsensor.repository.DadosSensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,13 @@ public class DadosSensorController {
     @Autowired
     private DadosSensorRepository repository;
 
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
+
     @PostMapping
     public void receberDados(@RequestBody DadosSensor dados) {
         repository.save(dados);
+        messagingTemplate.convertAndSend("/topic/dados", dados);
     }
 
     @GetMapping
