@@ -2,7 +2,7 @@
 
 Sistema completo para monitoramento remoto de sensores ambientais (temperatura e umidade), com backend em Spring Boot, frontend web dinâmico em JavaScript e firmware integrado para microcontroladores como o ESP32.
 
-![Placa e Sensores - Exemplo de Hardware](images/cloud_board_f.jpg)
+![Placa e Sensores - Exemplo de Hardware](https://raw.githubusercontent.com/renatocampoy/monitor-sensor/refs/heads/main/images/cloud_board_f.jpg)
 
 ---
 
